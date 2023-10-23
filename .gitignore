@@ -7,3 +7,6 @@ node_modules/
 .swc
 .idea
 .vscode
+yarn-error.log
+lib
+types

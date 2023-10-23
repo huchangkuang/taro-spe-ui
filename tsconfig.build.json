@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "target": "es2017",
+    "module": "es6",
+    "baseUrl": ".",
+    "outDir": "./lib",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "compileOnSave": false,
+  "exclude": [
+    "node_modules/*",
+    "dist/*"
+  ],
+  "include": [
+    "src/**/*"
+  ]
+}

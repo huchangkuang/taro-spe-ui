@@ -1,1 +1,1 @@
-export {default as PreviewImg} from "@/components/previewImg"
+export {default as PreviewImg} from "@/components/previewImg/previewImg"

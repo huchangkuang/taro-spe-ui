@@ -1,7 +1,8 @@
 {
   "name": "taro-spe-ui",
-  "version": "1.0.0",
-  "private": true,
+  "version": "0.0.1",
+  "browser": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
   "description": "基于Taro的一个UI组件库，简单易用",
   "templateInfo": {
     "name": "default",
@@ -9,14 +10,19 @@
     "css": "sass"
   },
   "main": "dist/index.js",
-  "types": "./types/index.d.ts",
+  "types": "types/index.d.ts",
   "files": [
+    "lib",
     "dist",
-    "types",
-    "src/**/interface.ts",
-    "src/**/*.d.ts"
+    "types"
   ],
+  "source": "src/index.ts",
   "scripts": {
+    "dev": "yarn run dev:lib",
+    "dev:lib": "tsc --project ./tsconfig.build.json --watch --incremental",
+    "build": "yarn run build:rollup && yarn run build:lib",
+    "build:lib": "tsc --project ./tsconfig.build.json --declaration --declarationDir types",
+    "build:rollup": "rollup --config config/rollup.config.js",
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
     "build:alipay": "taro build --type alipay",
@@ -26,7 +32,6 @@
     "build:qq": "taro build --type qq",
     "build:jd": "taro build --type jd",
     "build:quickapp": "taro build --type quickapp",
-    "build:ui": "TARO_BUILD_TYPE=ui taro build --ui",
     "dev:weapp": "npm run build:weapp -- --watch",
     "dev:swan": "npm run build:swan -- --watch",
     "dev:alipay": "npm run build:alipay -- --watch",
@@ -39,6 +44,10 @@
     "test": "jest",
     "prettier": "prettier --write \"src/**/*.ts*\""
   },
+  "keywords": [
+    "taro",
+    "react"
+  ],
   "browserslist": [
     "last 3 versions",
     "Android >= 4.1",
@@ -76,6 +85,13 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.0.1",
+    "rollup": "^2.16.1",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "rollup-plugin-visualizer": "^4.0.4",
     "@babel/core": "^7.8.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "@tarojs/cli": "3.6.16",
