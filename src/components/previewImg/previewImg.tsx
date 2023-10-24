@@ -3,8 +3,8 @@ import { Image, RootPortal, View } from '@tarojs/components';
 import { ImageProps } from '@tarojs/components/types/Image';
 import cs from 'classnames';
 import { getImageInfo, getSystemInfoSync, saveImageToPhotosAlbum, showModal } from '@tarojs/taro';
-import { getWechatSetting } from '@/common/wechatApi';
-import '@/styles/previewImg.scss';
+import {getWechatSetting} from "../../common/wechatApi";
+import "../../styles/previewImg.scss"
 
 type PreviewImgProps = {
   longTouch?: () => void;

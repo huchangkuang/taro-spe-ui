@@ -17,9 +17,6 @@
     "downlevelIteration": true,
     "baseUrl": ".",
     "types": ["node"],
-    "paths": {
-      "@/*": ["src/*"]
-    }
   },
   "compileOnSave": false,
   "exclude": [

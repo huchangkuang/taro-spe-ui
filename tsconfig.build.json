@@ -15,10 +15,7 @@
     "target": "es2017",
     "module": "es6",
     "baseUrl": ".",
-    "outDir": "./lib",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "outDir": "lib",
   },
   "compileOnSave": false,
   "exclude": [
