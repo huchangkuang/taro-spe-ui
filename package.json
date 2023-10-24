@@ -1,6 +1,6 @@
 {
   "name": "taro-spe-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "browser": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "description": "基于Taro的一个UI组件库，简单易用",
