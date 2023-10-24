@@ -15,7 +15,8 @@
     "target": "es2017",
     "module": "es6",
     "baseUrl": ".",
-    "outDir": "lib",
+    "rootDir": ".",
+    "outDir": "dist/types"
   },
   "compileOnSave": false,
   "exclude": [
@@ -23,6 +24,7 @@
     "dist/*"
   ],
   "include": [
-    "src/**/*"
+    "src/components/**/*",
+    "src/common/**/*"
   ]
 }

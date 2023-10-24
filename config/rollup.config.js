@@ -5,6 +5,10 @@ import RollupCommonjs from '@rollup/plugin-commonjs'
 import RollupTypescript from 'rollup-plugin-typescript2'
 import RollupCopy from 'rollup-plugin-copy'
 import RollupScss from 'rollup-plugin-scss'
+import RollupPluginClear from 'rollup-plugin-clear'
+import RollupImage from '@rollup/plugin-image'
+import { terser } from 'rollup-plugin-terser'
+import RollupBabel from 'rollup-plugin-babel'
 
 import Package from '../package.json'
 
@@ -57,9 +61,28 @@ export default {
     }),
     RollupJson(),
     RollupScss(),
+    RollupImage({
+      include: ['**/*.png', '**/*.jpg', '**/*.svg']
+    }),
+    RollupPluginClear({
+      targets: ['dist'],
+      watch: true
+    }),
+    RollupBabel({
+      runtimeHelpers: true,
+      "presets": [
+        [
+          "taro", {
+          framework: 'react'
+        }
+        ]
+      ],
+      "plugins": ["@babel/plugin-transform-runtime"]
+    }),
     RollupTypescript({
       tsconfig: resolveFile('../tsconfig.rollup.json')
     }),
+    terser(),
     RollupCopy({
       targets: [
         {
