@@ -8,6 +8,7 @@ import RollupScss from 'rollup-plugin-scss'
 import RollupPluginClear from 'rollup-plugin-clear'
 import RollupImage from '@rollup/plugin-image'
 import { terser } from 'rollup-plugin-terser'
+import RollupAlias from '@rollup/plugin-alias'
 import RollupBabel from 'rollup-plugin-babel'
 
 import Package from '../package.json'
@@ -59,6 +60,9 @@ export default {
     RollupCommonjs({
       include: /\/node_modules\//
     }),
+    RollupAlias({
+      entries: [{ find: '@', replacement: resolveFile('../src') }],
+    }),
     RollupJson(),
     RollupScss(),
     RollupImage({
@@ -69,6 +73,7 @@ export default {
       watch: true
     }),
     RollupBabel({
+      exclude: 'node_modules/**',
       runtimeHelpers: true,
       "presets": [
         [
