@@ -2,29 +2,21 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
+    "jsxFactory": "React.createElement",
     "moduleResolution": "node",
     "noImplicitAny": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "preserveConstEnums": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "resolveJsonModule": true,
-    "target": "es2017",
-    "module": "es6",
-    "baseUrl": ".",
-    "rootDir": ".",
-    "outDir": "dist/types"
+    "resolveJsonModule": true
   },
   "compileOnSave": false,
   "exclude": [
     "node_modules/*",
-    "dist/*"
-  ],
-  "include": [
-    "src/components/**/*",
-    "src/common/**/*"
+    "packages/dist/*"
   ]
 }

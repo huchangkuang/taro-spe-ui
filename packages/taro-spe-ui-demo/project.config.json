@@ -1,0 +1,34 @@
+{
+    "miniprogramRoot": "dist/",
+    "description": "Taro UI demo",
+    "appid": "wx7a42c5ab005bd5c8",
+    "setting": {
+        "urlCheck": true,
+        "es6": false,
+        "postcss": false,
+        "minified": false,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "condition": false,
+        "coverView": false,
+        "enhance": false,
+        "showShadowRootInWxmlPanel": false,
+        "packNpmRelationList": [],
+        "ignoreUploadUnusedFiles": true
+    },
+    "compileType": "miniprogram",
+    "srcMiniprogramRoot": "dist/",
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
+    },
+    "condition": {},
+    "libVersion": "2.31.0",
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    }
+}

@@ -1,0 +1,91 @@
+{
+  "name": "taro-spe-ui",
+  "version": "0.0.3",
+  "module": "dist/index.esm.js",
+  "main": "dist/index.js",
+  "source": "src/index.ts",
+  "react-native": "rn/index.ts",
+  "description": "基于Taro的一个UI组件库，简单易用",
+  "templateInfo": {
+    "name": "default",
+    "typescript": true,
+    "css": "sass"
+  },
+  "types": "./types/index.d.ts",
+  "files": [
+    "lib",
+    "dist",
+    "types"
+  ],
+  "keywords": [
+    "taro",
+    "taro-spe-ui",
+    "ui",
+    "react"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn run dev:lib",
+    "dev:lib": "tsc --project ./tsconfig.build.json --watch --incremental",
+    "dev:rollup": "rollup --config ./config/rollup.config.js --watch",
+    "build": "yarn run build:rollup && yarn run build:lib",
+    "build:lib": "tsc --project ./tsconfig.build.json",
+    "build:rollup": "rollup --config ./config/rollup.config.js",
+    "test": "jest",
+    "prettier": "prettier --write \"src/**/*.ts*\""
+  },
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "author": "",
+  "dependencies": {
+    "classnames": "^2.2.6"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-json": "^4.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@tarojs/components": "3.6.18",
+    "@tarojs/react": "3.6.18",
+    "@tarojs/runtime-rn": "3.6.18",
+    "@tarojs/taro": "3.6.18",
+    "@types/classnames": "^2.2.9",
+    "@types/node": "^13.11.1",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/react-native": "^0.64.13",
+    "camelize": "^1.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2",
+    "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-native": "^0.71.6",
+    "rollup": "^2.3.1",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "rollup-plugin-visualizer": "^4.0.2",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "@tarojs/components": ">=3",
+    "@tarojs/react": ">=3",
+    "@tarojs/taro": ">=3",
+    "react": ">=16.13.0",
+    "react-dom": ">=16.13.0",
+    "react-native": ">=0.62.0"
+  }
+}

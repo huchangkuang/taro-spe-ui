@@ -1,0 +1,16 @@
+
+#app {
+  background-color: #f8f8f8;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+view, text {
+  box-sizing: border-box;
+}
